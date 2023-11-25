@@ -11,6 +11,7 @@ class GameViewController: UIViewController {
     
     private let gameCustomView = CustomViewGameScreen(frame: UIScreen.main.bounds)
     
+    let soundController = SoundController.shared
     let startGameButton = UIButton()
     
     override func loadView() {
@@ -21,19 +22,25 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .gray
         
+        
         let backButton = UIBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
         
         let roadView = RoadView(frame: view.bounds)
         self.view.addSubview(roadView)
-
-       
-    }
-        @objc func backAction() {
-            navigationController?.popViewController(animated: true)
-        
     }
     
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        soundController.stopBackgroundMusic()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        soundController.startBackgroundMusic()
+    }
+    
+    @objc func backAction() {
+        navigationController?.popViewController(animated: true)
+    }
 }

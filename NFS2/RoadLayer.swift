@@ -21,33 +21,33 @@ class RoadView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    func createRoadLayer() {
-//        let dashLength: CGFloat = 20 // Длина пунктира
-//        let spaceLength: CGFloat = 14 // Длина пробела
-//        
-//        let dashPath = UIBezierPath()
-//        
-//        
-//        dashPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
-//        dashPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
-//        
-//        roadLayer.strokeColor = UIColor.white.cgColor
-//        roadLayer.lineWidth = 2
-//        roadLayer.lineDashPattern = [NSNumber(value: Float(dashLength)), NSNumber(value: Float(spaceLength))]
-//        roadLayer.path = dashPath.cgPath
-//        
-//        layer.addSublayer(roadLayer)
-//        
-//        animateRoad()
-//    }
+    //    func createRoadLayer() {
+    //        let dashLength: CGFloat = 20 // Длина пунктира
+    //        let spaceLength: CGFloat = 14 // Длина пробела
+    //
+    //        let dashPath = UIBezierPath()
+    //
+    //
+    //        dashPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
+    //        dashPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
+    //
+    //        roadLayer.strokeColor = UIColor.white.cgColor
+    //        roadLayer.lineWidth = 2
+    //        roadLayer.lineDashPattern = [NSNumber(value: Float(dashLength)), NSNumber(value: Float(spaceLength))]
+    //        roadLayer.path = dashPath.cgPath
+    //
+    //        layer.addSublayer(roadLayer)
+    //
+    //        animateRoad()
+    //    }
     func createRoadLayer() {
-        let dashLength: CGFloat = 10 // Длина пунктира
-        let spaceLength: CGFloat = 14 // Длина пробела
+        let dashLength: CGFloat = 30 // Длина пунктира
+        let spaceLength: CGFloat = 40 // Длина пробела
         let roadWidth: CGFloat = 200 // Ширина дороги
         let shoulderWidth: CGFloat = 10 // Ширина обочины
-
+        
         let roadCenterX = bounds.midX
-        let roadY = bounds.midY
+        _ = bounds.midY
         let roadMinX = roadCenterX - roadWidth / 2
         let roadMaxX = roadCenterX + roadWidth / 2
         let shoulderMinX = roadMinX - shoulderWidth
@@ -64,7 +64,7 @@ class RoadView: UIView {
         let dashPath = UIBezierPath()
         dashPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
         dashPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
-
+        
         
         let shoulderLayerLeft = CAShapeLayer()
         shoulderLayerLeft.strokeColor = UIColor.yellow.cgColor
@@ -89,44 +89,60 @@ class RoadView: UIView {
         
         animateRoad()
     }
-
+    
     func animateRoad() {
-        // Создаем метку для отображения обратного отсчета
+        let countdownValues = ["3", "2", "1", "GO!"]
+        var countdownIndex = 0
+        
         let countdownLabel = UILabel(frame: bounds)
         countdownLabel.textAlignment = .center
-        countdownLabel.font = UIFont.systemFont(ofSize: 45)
-        countdownLabel.textColor = UIColor.blue
+        countdownLabel.font = UIFont.systemFont(ofSize: 100)
+        countdownLabel.textColor = .systemPink
+        countdownLabel.alpha = 0
         addSubview(countdownLabel)
         
-        // Обратный отсчет: 3, 2, 1, Go
-        var countdownValue = 3
-        let countdownTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if countdownValue > 0 {
-                countdownLabel.text = "\(countdownValue)"
-            } else if countdownValue == 0 {
-                countdownLabel.text = "START!"
-            } else {
-                timer.invalidate()
-                countdownLabel.removeFromSuperview()
+        // Настройка теней
+        countdownLabel.layer.shadowColor = UIColor.black.cgColor
+        countdownLabel.layer.shadowOffset = CGSize(width: 2, height: 2)
+        countdownLabel.layer.shadowOpacity = 0.5
+        countdownLabel.layer.shadowRadius = 5
+        
+        func animateNextCountdown() {
+            countdownLabel.text = countdownValues[countdownIndex]
+            countdownLabel.alpha = 1
+            
+            UIView.animate(withDuration: 0.7, animations: {
+                countdownLabel.alpha = 0
+            }) { _ in
+                countdownIndex += 1
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                if countdownIndex < countdownValues.count {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        animateNextCountdown()
+                    }
+                } else {
+                    countdownLabel.removeFromSuperview()
                     self.startAnimation()
                 }
             }
-            countdownValue -= 1
         }
         
-        RunLoop.current.add(countdownTimer, forMode: .common)
+        UIView.animate(withDuration: 0.9, delay: 0.5, animations: {
+            countdownLabel.alpha = 1
+        }) { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                animateNextCountdown()
+            }
+        }
     }
     
     func startAnimation() {
         let roadAnimation = CABasicAnimation(keyPath: "lineDashPhase")
         roadAnimation.fromValue = 0
-        roadAnimation.toValue = roadLayer.lineDashPattern?.reduce(0) { $0 + CGFloat(truncating: $1) }
-        roadAnimation.duration = 0.5
+        roadAnimation.toValue = -roadLayer.lineDashPattern!.reduce(0) { $0 + CGFloat(truncating: $1) }
+        roadAnimation.duration = 0.3 // скорость анимации пунктира
         roadAnimation.repeatCount = .infinity
-    
-
+        
         roadLayer.add(roadAnimation, forKey: "lineDashPhaseAnimation")
     }
 }

@@ -43,6 +43,10 @@ final class CustomViewStartScreen: UIView {
         startGameButton.addTarget(self, action: #selector(actionStartGameButtonTapped), for: .touchUpInside)
         settingsButton.addTarget(self, action: #selector(actionSettingsGameButtonTapped), for: .touchUpInside)
         recordsButton.addTarget(self, action: #selector(actionRecordsGameButtonTapped), for: .touchUpInside)
+        
+        startGameButton.setButtonSound(filename: "callButton_sound", withExtension: "mp3")
+        settingsButton.setButtonSound(filename: "clickButton_sound", withExtension: "mp3")
+        recordsButton.setButtonSound(filename: "clickButton_sound", withExtension: "mp3")
     }
     
     
