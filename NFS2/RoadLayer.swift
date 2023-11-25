@@ -21,26 +21,75 @@ class RoadView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+//    func createRoadLayer() {
+//        let dashLength: CGFloat = 20 // Длина пунктира
+//        let spaceLength: CGFloat = 14 // Длина пробела
+//        
+//        let dashPath = UIBezierPath()
+//        
+//        
+//        dashPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
+//        dashPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
+//        
+//        roadLayer.strokeColor = UIColor.white.cgColor
+//        roadLayer.lineWidth = 2
+//        roadLayer.lineDashPattern = [NSNumber(value: Float(dashLength)), NSNumber(value: Float(spaceLength))]
+//        roadLayer.path = dashPath.cgPath
+//        
+//        layer.addSublayer(roadLayer)
+//        
+//        animateRoad()
+//    }
     func createRoadLayer() {
-        let dashLength: CGFloat = 20 // Длина пунктира
+        let dashLength: CGFloat = 10 // Длина пунктира
         let spaceLength: CGFloat = 14 // Длина пробела
+        let roadWidth: CGFloat = 200 // Ширина дороги
+        let shoulderWidth: CGFloat = 10 // Ширина обочины
+
+        let roadCenterX = bounds.midX
+        let roadY = bounds.midY
+        let roadMinX = roadCenterX - roadWidth / 2
+        let roadMaxX = roadCenterX + roadWidth / 2
+        let shoulderMinX = roadMinX - shoulderWidth
+        let shoulderMaxX = roadMaxX + shoulderWidth
+        
+        let shoulderPathLeft = UIBezierPath()
+        shoulderPathLeft.move(to: CGPoint(x: shoulderMinX, y: bounds.minY))
+        shoulderPathLeft.addLine(to: CGPoint(x: shoulderMinX, y: bounds.maxY))
+        
+        let shoulderPathRight = UIBezierPath()
+        shoulderPathRight.move(to: CGPoint(x: shoulderMaxX, y: bounds.minY))
+        shoulderPathRight.addLine(to: CGPoint(x: shoulderMaxX, y: bounds.maxY))
         
         let dashPath = UIBezierPath()
-        
-        
         dashPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
         dashPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
+
+        
+        let shoulderLayerLeft = CAShapeLayer()
+        shoulderLayerLeft.strokeColor = UIColor.yellow.cgColor
+        shoulderLayerLeft.lineWidth = shoulderWidth
+        shoulderLayerLeft.lineCap = .butt
+        shoulderLayerLeft.path = shoulderPathLeft.cgPath
+        
+        let shoulderLayerRight = CAShapeLayer()
+        shoulderLayerRight.strokeColor = UIColor.yellow.cgColor
+        shoulderLayerRight.lineWidth = shoulderWidth
+        shoulderLayerRight.lineCap = .butt
+        shoulderLayerRight.path = shoulderPathRight.cgPath
         
         roadLayer.strokeColor = UIColor.white.cgColor
         roadLayer.lineWidth = 2
         roadLayer.lineDashPattern = [NSNumber(value: Float(dashLength)), NSNumber(value: Float(spaceLength))]
         roadLayer.path = dashPath.cgPath
         
+        layer.addSublayer(shoulderLayerLeft)
+        layer.addSublayer(shoulderLayerRight)
         layer.addSublayer(roadLayer)
         
         animateRoad()
     }
- 
+
     func animateRoad() {
         // Создаем метку для отображения обратного отсчета
         let countdownLabel = UILabel(frame: bounds)
