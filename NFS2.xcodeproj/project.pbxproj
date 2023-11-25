@@ -13,8 +13,14 @@
 		04CE3F012B0E97960024A6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CE3F002B0E97960024A6D9 /* Assets.xcassets */; };
 		04CE3F042B0E97960024A6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CE3F022B0E97960024A6D9 /* LaunchScreen.storyboard */; };
 		04CE3F0D2B0EADEC0024A6D9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F0C2B0EADEC0024A6D9 /* GameViewController.swift */; };
-		04CE3F0F2B0F55480024A6D9 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F0E2B0F55480024A6D9 /* CustomView.swift */; };
+		04CE3F0F2B0F55480024A6D9 /* CustomViewStartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F0E2B0F55480024A6D9 /* CustomViewStartScreen.swift */; };
 		04CE3F112B0F6FBA0024A6D9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F102B0F6FBA0024A6D9 /* CustomButton.swift */; };
+		04CE3F132B10DDEC0024A6D9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F122B10DDEC0024A6D9 /* SettingsViewController.swift */; };
+		04CE3F152B10DE030024A6D9 /* RecordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F142B10DE030024A6D9 /* RecordsViewController.swift */; };
+		04CE3F172B11E4790024A6D9 /* CustonViewGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F162B11E4790024A6D9 /* CustonViewGameScreen.swift */; };
+		04CE3F192B12186F0024A6D9 /* CustomViewSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */; };
+		04CE3F1B2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */; };
+		04CE3F1D2B1227A10024A6D9 /* RoadLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +32,14 @@
 		04CE3F032B0E97960024A6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CE3F052B0E97960024A6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CE3F0C2B0EADEC0024A6D9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		04CE3F0E2B0F55480024A6D9 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		04CE3F0E2B0F55480024A6D9 /* CustomViewStartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewStartScreen.swift; sourceTree = "<group>"; };
 		04CE3F102B0F6FBA0024A6D9 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		04CE3F122B10DDEC0024A6D9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		04CE3F142B10DE030024A6D9 /* RecordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsViewController.swift; sourceTree = "<group>"; };
+		04CE3F162B11E4790024A6D9 /* CustonViewGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustonViewGameScreen.swift; sourceTree = "<group>"; };
+		04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewSettingsScreen.swift; sourceTree = "<group>"; };
+		04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRecordsScreen.swift; sourceTree = "<group>"; };
+		04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			children = (
 				04CE3EF72B0E97930024A6D9 /* AppDelegate.swift */,
 				04CE3EF92B0E97930024A6D9 /* SceneDelegate.swift */,
+				04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */,
 				04CE3F0B2B0EA1A30024A6D9 /* ViewControllers */,
 				04CE3F002B0E97960024A6D9 /* Assets.xcassets */,
 				04CE3F022B0E97960024A6D9 /* LaunchScreen.storyboard */,
@@ -73,10 +86,15 @@
 		04CE3F0B2B0EA1A30024A6D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				04CE3F0E2B0F55480024A6D9 /* CustomView.swift */,
-				04CE3F102B0F6FBA0024A6D9 /* CustomButton.swift */,
 				04CE3EFB2B0E97930024A6D9 /* StartViewController.swift */,
 				04CE3F0C2B0EADEC0024A6D9 /* GameViewController.swift */,
+				04CE3F122B10DDEC0024A6D9 /* SettingsViewController.swift */,
+				04CE3F142B10DE030024A6D9 /* RecordsViewController.swift */,
+				04CE3F0E2B0F55480024A6D9 /* CustomViewStartScreen.swift */,
+				04CE3F162B11E4790024A6D9 /* CustonViewGameScreen.swift */,
+				04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */,
+				04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */,
+				04CE3F102B0F6FBA0024A6D9 /* CustomButton.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -151,12 +169,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04CE3F0F2B0F55480024A6D9 /* CustomView.swift in Sources */,
+				04CE3F0F2B0F55480024A6D9 /* CustomViewStartScreen.swift in Sources */,
+				04CE3F1D2B1227A10024A6D9 /* RoadLayer.swift in Sources */,
 				04CE3F0D2B0EADEC0024A6D9 /* GameViewController.swift in Sources */,
+				04CE3F132B10DDEC0024A6D9 /* SettingsViewController.swift in Sources */,
 				04CE3F112B0F6FBA0024A6D9 /* CustomButton.swift in Sources */,
 				04CE3EFC2B0E97930024A6D9 /* StartViewController.swift in Sources */,
 				04CE3EF82B0E97930024A6D9 /* AppDelegate.swift in Sources */,
 				04CE3EFA2B0E97930024A6D9 /* SceneDelegate.swift in Sources */,
+				04CE3F152B10DE030024A6D9 /* RecordsViewController.swift in Sources */,
+				04CE3F1B2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift in Sources */,
+				04CE3F192B12186F0024A6D9 /* CustomViewSettingsScreen.swift in Sources */,
+				04CE3F172B11E4790024A6D9 /* CustonViewGameScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

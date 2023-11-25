@@ -8,18 +8,10 @@ import UIKit
 
 final class CustomViewSettingsScreen: UIView {
     
-    var backgroundImage: UIImage?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        backgroundImage = UIImage(named: "mainImage")
-        let backgroundImageView = UIImageView(image: backgroundImage)
-        
-        backgroundImageView.frame = self.bounds
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.clipsToBounds = true
-        
+      
        
     }
     

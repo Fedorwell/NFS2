@@ -9,7 +9,7 @@ import UIKit
 
 class StartViewController: UIViewController {
  
-    private let customView = CustomView(frame: UIScreen.main.bounds)
+    private let customView = CustomViewStartScreen(frame: UIScreen.main.bounds)
     
     let startGameButton = UIButton()
     
@@ -22,7 +22,7 @@ class StartViewController: UIViewController {
         setupBinding()
     }
         func setupBinding() {
-            customView.actionRecordButton = {
+            customView.actionStartGameButton = {
                 print("Вперед")
                 let gameVC =  GameViewController()
                 self.navigationController?.pushViewController(gameVC, animated: true)
@@ -30,14 +30,14 @@ class StartViewController: UIViewController {
             }
             customView.actionSettingsButton = {
                 print("Вперед")
-                let gameVC =  GameViewController()
-                self.navigationController?.pushViewController(gameVC, animated: true)
+                let settinsGameVC =  SettingsViewController()
+                self.navigationController?.pushViewController(settinsGameVC, animated: true)
                 
             }
-            customView.actionStartGameButton = {
+            customView.actionRecordButton = {
                 print("Вперед")
-                let gameVC =  GameViewController()
-                self.navigationController?.pushViewController(gameVC, animated: true)
+                let recordsGameVC = RecordsViewController()
+                self.navigationController?.pushViewController(recordsGameVC, animated: true)
             }
         }
         
