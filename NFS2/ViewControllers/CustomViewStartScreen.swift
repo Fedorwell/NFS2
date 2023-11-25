@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomView: UIView {
+final class CustomViewStartScreen: UIView {
     
     var backgroundImage: UIImage?
     
