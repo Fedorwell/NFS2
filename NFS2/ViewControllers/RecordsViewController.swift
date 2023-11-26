@@ -13,14 +13,12 @@ class RecordsViewController: UIViewController {
     
     let soundController = SoundController.shared
     
-    
     override func loadView() {
         view = recordsCustomView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let backButton = CustomBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
@@ -34,7 +32,5 @@ class RecordsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
         
     }
-    
-    
     
 }

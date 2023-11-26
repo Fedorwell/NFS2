@@ -9,7 +9,6 @@ import UIKit
 
 final class CustomViewRecordsScreen: UIView {
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
       
@@ -17,11 +16,8 @@ final class CustomViewRecordsScreen: UIView {
        
     }
     
-    
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-  
 }

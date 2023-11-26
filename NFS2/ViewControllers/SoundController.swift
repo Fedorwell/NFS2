@@ -41,6 +41,4 @@ class SoundController {
     func isBackgroundMusicPlaying() -> Bool {
         return backgroundMusicPlayer?.isPlaying ?? false
     }
-    
- 
 }
