@@ -11,6 +11,7 @@ class SettingsViewController: UIViewController {
     
     private let settingsCustomView = CustomViewSettingsScreen(frame: UIScreen.main.bounds)
     
+    let soundController = SoundController.shared
     let startGameButton = UIButton()
     
     override func loadView() {
@@ -20,17 +21,22 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
-      
         
-        let backButton = UIBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
+        
+        let backButton = CustomBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
-       
+        backButton.setButtonSound(filename: "clickButton_sound", withExtension: "mp3")
+        
+        
     }
-        @objc func backAction() {
-            navigationController?.popViewController(animated: true)
+    @objc func backAction() {
+        if let backButton = navigationItem.leftBarButtonItem as? CustomBarButtonItem {
+            backButton.playButtonSound()
+        }
+        navigationController?.popViewController(animated: true)
         
     }
     
-
-
+    
+    
 }

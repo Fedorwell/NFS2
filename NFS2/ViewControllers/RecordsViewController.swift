@@ -11,7 +11,9 @@ class RecordsViewController: UIViewController {
     
     private let recordsCustomView = CustomViewRecordsScreen(frame: UIScreen.main.bounds)
     
-
+    let soundController = SoundController.shared
+    
+    
     override func loadView() {
         view = recordsCustomView
     }
@@ -20,15 +22,19 @@ class RecordsViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let backButton = UIBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
+        let backButton = CustomBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
-       
+        backButton.setButtonSound(filename: "clickButton_sound", withExtension: "mp3")
+        
     }
-        @objc func backAction() {
-            navigationController?.popViewController(animated: true)
+    @objc func backAction() {
+        if let backButton = navigationItem.leftBarButtonItem as? CustomBarButtonItem {
+            backButton.playButtonSound()
+        }
+        navigationController?.popViewController(animated: true)
         
     }
     
-
-
+    
+    
 }

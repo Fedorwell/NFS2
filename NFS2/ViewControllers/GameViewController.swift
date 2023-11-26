@@ -10,9 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     private let gameCustomView = CustomViewGameScreen(frame: UIScreen.main.bounds)
-    
     let soundController = SoundController.shared
-    let startGameButton = UIButton()
     
     override func loadView() {
         view = gameCustomView
@@ -22,9 +20,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .gray
         
-        
-        let backButton = UIBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
+        let backButton = CustomBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
+        backButton.setButtonSound(filename: "clickButton_sound", withExtension: "mp3")
         
         let roadView = RoadView(frame: view.bounds)
         self.view.addSubview(roadView)
@@ -41,6 +39,10 @@ class GameViewController: UIViewController {
     }
     
     @objc func backAction() {
+        // Воспроизведение звука при нажатии на кнопку "Назад"
+        if let backButton = navigationItem.leftBarButtonItem as? CustomBarButtonItem {
+            backButton.playButtonSound()
+        }
         navigationController?.popViewController(animated: true)
     }
 }

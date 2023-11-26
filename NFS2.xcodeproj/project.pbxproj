@@ -21,6 +21,7 @@
 		04CE3F192B12186F0024A6D9 /* CustomViewSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */; };
 		04CE3F1B2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */; };
 		04CE3F1D2B1227A10024A6D9 /* RoadLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */; };
+		F42BD7D42B134FC00022AB02 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BD7D32B134FBF0022AB02 /* CustomBarButtonItem.swift */; };
 		F4DC7C312B127DEE00524B10 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC7C302B127DEE00524B10 /* SoundController.swift */; };
 		F4DC7C362B12870000524B10 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4DC7C352B12870000524B10 /* background_music.mp3 */; };
 		F4DC7C382B1291AA00524B10 /* clickButton_sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4DC7C372B1291AA00524B10 /* clickButton_sound.mp3 */; };
@@ -44,6 +45,7 @@
 		04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewSettingsScreen.swift; sourceTree = "<group>"; };
 		04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRecordsScreen.swift; sourceTree = "<group>"; };
 		04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadLayer.swift; sourceTree = "<group>"; };
+		F42BD7D32B134FBF0022AB02 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBarButtonItem.swift; path = ../../CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		F4DC7C302B127DEE00524B10 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		F4DC7C352B12870000524B10 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
 		F4DC7C372B1291AA00524B10 /* clickButton_sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clickButton_sound.mp3; sourceTree = "<group>"; };
@@ -81,9 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				F4DC7C322B12825100524B10 /* Resourse */,
-				F4DC7C352B12870000524B10 /* background_music.mp3 */,
-				F4DC7C3B2B12979D00524B10 /* callButton_sound.mp3 */,
-				F4DC7C372B1291AA00524B10 /* clickButton_sound.mp3 */,
 				04CE3EF72B0E97930024A6D9 /* AppDelegate.swift */,
 				04CE3EF92B0E97930024A6D9 /* SceneDelegate.swift */,
 				04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */,
@@ -108,6 +107,7 @@
 				04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */,
 				04CE3F102B0F6FBA0024A6D9 /* CustomButton.swift */,
 				F4DC7C302B127DEE00524B10 /* SoundController.swift */,
+				F42BD7D32B134FBF0022AB02 /* CustomBarButtonItem.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -115,6 +115,9 @@
 		F4DC7C322B12825100524B10 /* Resourse */ = {
 			isa = PBXGroup;
 			children = (
+				F4DC7C352B12870000524B10 /* background_music.mp3 */,
+				F4DC7C3B2B12979D00524B10 /* callButton_sound.mp3 */,
+				F4DC7C372B1291AA00524B10 /* clickButton_sound.mp3 */,
 			);
 			path = Resourse;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				04CE3F112B0F6FBA0024A6D9 /* CustomButton.swift in Sources */,
 				04CE3EFC2B0E97930024A6D9 /* StartViewController.swift in Sources */,
 				04CE3EF82B0E97930024A6D9 /* AppDelegate.swift in Sources */,
+				F42BD7D42B134FC00022AB02 /* CustomBarButtonItem.swift in Sources */,
 				04CE3EFA2B0E97930024A6D9 /* SceneDelegate.swift in Sources */,
 				04CE3F152B10DE030024A6D9 /* RecordsViewController.swift in Sources */,
 				04CE3F1B2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift in Sources */,

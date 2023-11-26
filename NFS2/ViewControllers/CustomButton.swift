@@ -24,8 +24,6 @@ final class CustomButton: UIButton {
         
         self.tintColor = .green
         self.backgroundColor = .green
-        self.alpha = 0.5
-        self.titleLabel?.alpha = 1
         self.layer.cornerRadius = cornerRadius
         
         addTarget(self, action: #selector(playButtonSound), for: .touchUpInside)
@@ -45,6 +43,19 @@ final class CustomButton: UIButton {
             buttonSoundPlayer?.prepareToPlay()
         } catch {
             print("Ошибка инициализации аудиоплеера: \(error.localizedDescription)")
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // Настройка тени для текста
+        if let titleLabel = titleLabel {
+            titleLabel.layer.masksToBounds = false
+            titleLabel.layer.shadowColor = UIColor.black.cgColor
+            titleLabel.layer.shadowOpacity = 0.5
+            titleLabel.layer.shadowOffset = CGSize(width: 1, height: 1)
+            titleLabel.layer.shadowRadius = 2
         }
     }
     
