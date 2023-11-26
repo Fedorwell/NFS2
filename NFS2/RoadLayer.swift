@@ -21,25 +21,7 @@ class RoadView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //    func createRoadLayer() {
-    //        let dashLength: CGFloat = 20 // Длина пунктира
-    //        let spaceLength: CGFloat = 14 // Длина пробела
-    //
-    //        let dashPath = UIBezierPath()
-    //
-    //
-    //        dashPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
-    //        dashPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
-    //
-    //        roadLayer.strokeColor = UIColor.white.cgColor
-    //        roadLayer.lineWidth = 2
-    //        roadLayer.lineDashPattern = [NSNumber(value: Float(dashLength)), NSNumber(value: Float(spaceLength))]
-    //        roadLayer.path = dashPath.cgPath
-    //
-    //        layer.addSublayer(roadLayer)
-    //
-    //        animateRoad()
-    //    }
+
     func createRoadLayer() {
         let dashLength: CGFloat = 30 // Длина пунктира
         let spaceLength: CGFloat = 40 // Длина пробела
