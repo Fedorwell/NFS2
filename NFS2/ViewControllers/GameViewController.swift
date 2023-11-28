@@ -29,6 +29,7 @@ class GameViewController: UIViewController, UICollisionBehaviorDelegate {
         let backButton = CustomBarButtonItem(title: "Назад", style: .plain, target: self, action: #selector(backAction))
         navigationItem.leftBarButtonItem = backButton
         backButton.setButtonSound(filename: "clickButton_sound", withExtension: "mp3")
+        soundController.stopBackgroundMusic()
         
         let roadView = RoadView(frame: view.bounds)
         self.view.addSubview(roadView)
