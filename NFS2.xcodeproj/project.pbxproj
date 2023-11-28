@@ -21,6 +21,7 @@
 		04CE3F192B12186F0024A6D9 /* CustomViewSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */; };
 		04CE3F1B2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */; };
 		04CE3F1D2B1227A10024A6D9 /* RoadLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */; };
+		04CE3F332B1376920024A6D9 /* MyCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CE3F322B1376920024A6D9 /* MyCarViewController.swift */; };
 		F42BD7D42B134FC00022AB02 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42BD7D32B134FBF0022AB02 /* CustomBarButtonItem.swift */; };
 		F4DC7C312B127DEE00524B10 /* SoundController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DC7C302B127DEE00524B10 /* SoundController.swift */; };
 		F4DC7C362B12870000524B10 /* background_music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F4DC7C352B12870000524B10 /* background_music.mp3 */; };
@@ -45,6 +46,7 @@
 		04CE3F182B12186F0024A6D9 /* CustomViewSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewSettingsScreen.swift; sourceTree = "<group>"; };
 		04CE3F1A2B121C0F0024A6D9 /* CustomViewRecordsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewRecordsScreen.swift; sourceTree = "<group>"; };
 		04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadLayer.swift; sourceTree = "<group>"; };
+		04CE3F322B1376920024A6D9 /* MyCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarViewController.swift; sourceTree = "<group>"; };
 		F42BD7D32B134FBF0022AB02 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomBarButtonItem.swift; path = ../../CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		F4DC7C302B127DEE00524B10 /* SoundController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundController.swift; sourceTree = "<group>"; };
 		F4DC7C352B12870000524B10 /* background_music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background_music.mp3; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				04CE3F1C2B1227A10024A6D9 /* RoadLayer.swift */,
 				04CE3F0B2B0EA1A30024A6D9 /* ViewControllers */,
 				04CE3F002B0E97960024A6D9 /* Assets.xcassets */,
+				04CE3F322B1376920024A6D9 /* MyCarViewController.swift */,
 				04CE3F022B0E97960024A6D9 /* LaunchScreen.storyboard */,
 				04CE3F052B0E97960024A6D9 /* Info.plist */,
 			);
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CE3F0F2B0F55480024A6D9 /* CustomViewStartScreen.swift in Sources */,
+				04CE3F332B1376920024A6D9 /* MyCarViewController.swift in Sources */,
 				04CE3F1D2B1227A10024A6D9 /* RoadLayer.swift in Sources */,
 				04CE3F0D2B0EADEC0024A6D9 /* GameViewController.swift in Sources */,
 				04CE3F132B10DDEC0024A6D9 /* SettingsViewController.swift in Sources */,
